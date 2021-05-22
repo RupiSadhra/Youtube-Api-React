@@ -4,7 +4,7 @@ import youtube from "../apis/youtube";
 import VideoList from "./VideoList";
 
 class App extends React.Component {
-  state = { videos: [] };
+  state = { videos: [], selectedVideo: {} };
   onTermSubmit = (term) => {
     console.log(term);
     youtube
@@ -16,11 +16,19 @@ class App extends React.Component {
         console.log(`Youtube api error... ${error}`);
       });
   };
+
+  onVideoSelect = (video) => {
+    console.log("From App:", video);
+    this.setState({ selectedVideo: video });
+  };
   render() {
     return (
       <div className="ui container">
         <SearchBar onTermSubmit={this.onTermSubmit} />
-        <VideoList videos={this.state.videos} />
+        <VideoList
+          onVideoSelect={this.onVideoSelect}
+          videos={this.state.videos}
+        />
       </div>
     );
   }
