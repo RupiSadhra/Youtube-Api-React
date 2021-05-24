@@ -8,7 +8,7 @@ class App extends React.Component {
   state = { videos: [], selectedVideo: null };
   componentDidMount() {
     youtube
-      .get("/search", { params: { q: "new zealand latest news" } })
+      .get("/search", { params: { q: "america's got talent" } })
       .then((result) => {
         this.setState({
           videos: result.data.items,

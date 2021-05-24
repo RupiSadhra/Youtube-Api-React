@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 
 class SearchBar extends React.Component {
-  state = { term: "cooking" };
+  state = { term: "" };
 
   onInputChange = (event) => {
     this.setState({ term: event.target.value });

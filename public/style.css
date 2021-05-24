@@ -1,0 +1,14 @@
+.youtube-link {
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.youtube-link i {
+  font-size: 4rem;
+  cursor: pointer;
+  color: #ff0000;
+}
